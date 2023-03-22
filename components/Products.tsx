@@ -14,7 +14,7 @@ export default function Products({ submitTarget, enabled }: Props) {
     <form method='get' action={submitTarget} ref={formRef}>
       <div className='flex flex-col gap-16'>
         <div className="grid grid-cols-2 gap-8">
-          {products.map(product => {
+          {/* {products.map(product => {
             return (
               <div className="rounded-md bg-white text-left p-8" key={product.id}>
                 <h3 className="text-2xl font-bold">{product.name}</h3>
@@ -28,7 +28,8 @@ export default function Products({ submitTarget, enabled }: Props) {
                 </div>
               </div>
             )
-          })}
+          }
+          )} */}
 
         </div>
 
