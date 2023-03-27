@@ -19,7 +19,7 @@ export default function HomePage() {
 
       {/* We disable checking out without a connected wallet */}
       {/* <Products submitTarget='/checkout' enabled={publicKey !== null} /> */}
-      <CheckoutButton amount={10} enabled={publicKey !== null}/>
+      <CheckoutButton enabled={publicKey !== null}/>
     </div>
     
   )
