@@ -10,6 +10,7 @@ import { MakeTransactionInputData, MakeTransactionOutputData } from "./api/makeT
 
 export default function Checkout() {
   const router = useRouter();
+  const { order_id } = router.query;
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
@@ -96,7 +97,8 @@ export default function Checkout() {
       try {
         // Check if there is any transaction for the reference
         const signatureInfo = await findReference(connection, reference);
-        router.push('/confirmed')
+        
+        router.push(`/confirmed/?order_id=${order_id}&signature=${signatureInfo.signature}`)
       } catch (e) {
         if (e instanceof FindReferenceError) {
           // No transaction found yet, ignore this error
